@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    url: jdbc:sqlite:edulycee.db
+    driver-class-name: org.sqlite.JDBC
+    username:
+    password:
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.community.dialect.SQLiteDialect
+        format_sql: true
+
+  jackson:
+    default-property-inclusion: non_null
+
+logging:
+  level:
+    com.edulycee: INFO
+    org.springframework.security: DEBUG
+
+server:
+  port: 8080
+
+# Gemini AI Configuration
+gemini:
+  api:
+    key: ${GEMINI_API_KEY:AIzaSyAQfbHODajC0WO77VRDlFuN88sUAvyO-k0}
+
+# JWT Configuration
+jwt:
+  secret: edulyceeSecretKey2024ForJWTTokenGenerationabiggerkeytomakethingsworkisthiskeylongenoughnoworshouldiincreaseitssizeidontknowbutiwillkeepmakingitlonger
+  expiration: 18000 # 5 hours in seconds
